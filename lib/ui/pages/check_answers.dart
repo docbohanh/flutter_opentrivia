@@ -24,7 +24,7 @@ class CheckAnswersPage extends StatelessWidget {
               decoration: BoxDecoration(
                 color: Theme.of(context).primaryColor
               ),
-              height: 200,
+//              height: 200,
             ),
           ),
           ListView.builder(
@@ -39,11 +39,14 @@ class CheckAnswersPage extends StatelessWidget {
   }
   Widget _buildItem(BuildContext context, int index) {
     if(index == questions.length) {
-      return RaisedButton(
-        child: Text("Done"),
-        onPressed: (){
-          Navigator.of(context).popUntil(ModalRoute.withName(Navigator.defaultRouteName));
-        },
+      return Container(
+        margin: EdgeInsets.only(bottom: MediaQuery.of(context).padding.bottom),
+        child: RaisedButton(
+          child: Text("Xong"),
+          onPressed: (){
+            Navigator.of(context).popUntil(ModalRoute.withName(Navigator.defaultRouteName));
+          },
+        ),
       );
     }
     Question question = questions[index];
@@ -68,7 +71,7 @@ class CheckAnswersPage extends StatelessWidget {
             SizedBox(height: 5.0),
             correct ? Container(): Text.rich(TextSpan(
               children: [
-                TextSpan(text: "Answer: "),
+                TextSpan(text: "Bạn đã trả lời: "),
                 TextSpan(text: HtmlUnescape().convert(question.correctAnswer) , style: TextStyle(
                   fontWeight: FontWeight.w500
                 ))

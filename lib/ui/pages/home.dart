@@ -5,24 +5,12 @@ import 'package:opentrivia/ui/widgets/quiz_options.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 
 class HomePage extends StatelessWidget {
-  final List<Color> tileColors = [
-    Colors.green,
-    Colors.blue,
-    Colors.purple,
-    Colors.pink,
-    Colors.indigo,
-    Colors.lightBlue,
-    Colors.amber,
-    Colors.deepOrange,
-    Colors.red,
-    Colors.brown
-  ];
 
   @override
   Widget build(BuildContext context){
     return Scaffold(
       appBar: AppBar(
-        title: Text('OpenTrivia'),
+        title: Text('VNPT Quiz Demo'),
         elevation: 0,
       ),
       body: Stack(
@@ -33,7 +21,7 @@ class HomePage extends StatelessWidget {
               decoration: BoxDecoration(
                 color: Theme.of(context).primaryColor
               ),
-              height: 200,
+//              height: MediaQuery.of(context).size.height/3,
             ),
           ),
           CustomScrollView(
@@ -42,7 +30,7 @@ class HomePage extends StatelessWidget {
               SliverToBoxAdapter(
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 16.0,vertical: 8.0),
-                  child: Text("Select a category to start the quiz", style: TextStyle(
+                  child: Text("", style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.w500,
                     fontSize: 16.0
@@ -50,7 +38,7 @@ class HomePage extends StatelessWidget {
                 ),
               ),
               SliverPadding(
-                padding: const EdgeInsets.all(16.0),
+                padding: const EdgeInsets.all(15.0),
                 sliver: SliverGrid(
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 3,

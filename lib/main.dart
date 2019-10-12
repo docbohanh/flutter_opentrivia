@@ -10,12 +10,12 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Open Trivia',
       theme: ThemeData(
-        primarySwatch: Colors.pink,
-        accentColor: Colors.indigo,
+        primarySwatch: Colors.indigo,
+        accentColor: Colors.blueAccent,
         fontFamily: "Montserrat",
         buttonColor: Colors.pink,
         buttonTheme: ButtonThemeData(
-          buttonColor: Colors.pink,
+          buttonColor: Colors.green,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(20.0),
           ),

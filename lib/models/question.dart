@@ -31,4 +31,7 @@ class Question {
     return data.map((question) => Question.fromMap(question)).toList();
   }
 
+  String description() {
+    return "name: $categoryName | type: $type | difficulty: $difficulty | question: $question | correctAnswer: $correctAnswer \n";
+  }
 }

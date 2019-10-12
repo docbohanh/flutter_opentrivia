@@ -31,7 +31,7 @@ class QuizFinishedPage extends StatelessWidget {
     
     return Scaffold(
       appBar: AppBar(
-        title: Text('Result'),
+        title: Text('Kết quả'),
         elevation: 0,
       ),
       body: Container(
@@ -56,19 +56,7 @@ class QuizFinishedPage extends StatelessWidget {
                   borderRadius: BorderRadius.circular(10.0)
                 ),
                 child: ListTile(
-                  contentPadding: const EdgeInsets.all(16.0),
-                  title: Text("Total Questions", style: titleStyle),
-                  trailing: Text("${questions.length}", style: trailingStyle),
-                ),
-              ),
-              SizedBox(height: 10.0),
-              Card(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10.0)
-                ),
-                child: ListTile(
-                  contentPadding: const EdgeInsets.all(16.0),
-                  title: Text("Score", style: titleStyle),
+                  title: Text("Tỷ lệ trả lời đúng", style: titleStyle),
                   trailing: Text("${correct/questions.length * 100}%", style: trailingStyle),
                 ),
               ),
@@ -78,8 +66,7 @@ class QuizFinishedPage extends StatelessWidget {
                   borderRadius: BorderRadius.circular(10.0)
                 ),
                 child: ListTile(
-                  contentPadding: const EdgeInsets.all(16.0),
-                  title: Text("Correct Answers", style: titleStyle),
+                  title: Text("Số câu trả lời đúng", style: titleStyle),
                   trailing: Text("$correct/${questions.length}", style: trailingStyle),
                 ),
               ),
@@ -89,8 +76,7 @@ class QuizFinishedPage extends StatelessWidget {
                   borderRadius: BorderRadius.circular(10.0)
                 ),
                 child: ListTile(
-                  contentPadding: const EdgeInsets.all(16.0),
-                  title: Text("Incorrect Answers", style: titleStyle),
+                  title: Text("Số câu trả lời sai", style: titleStyle),
                   trailing: Text("${questions.length - correct}/${questions.length}", style: trailingStyle),
                 ),
               ),
@@ -104,7 +90,7 @@ class QuizFinishedPage extends StatelessWidget {
                       borderRadius: BorderRadius.circular(10.0),
                     ),
                     color: Theme.of(context).accentColor.withOpacity(0.8),
-                    child: Text("Goto Home"),
+                    child: Text("Về trang chủ"),
                     onPressed: () => Navigator.pop(context),
                   ),
                   RaisedButton(
@@ -113,7 +99,7 @@ class QuizFinishedPage extends StatelessWidget {
                       borderRadius: BorderRadius.circular(10.0),
                     ),
                     color: Theme.of(context).primaryColor,
-                    child: Text("Check Answers"),
+                    child: Text("Xem lại bài làm"),
                     onPressed: (){
                       Navigator.of(context).push(MaterialPageRoute(
                         builder: (_) => CheckAnswersPage(questions: questions, answers: answers,)
